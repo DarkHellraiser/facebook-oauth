@@ -1,0 +1,23 @@
+/* Empty. Add your own CSS if you like */
+.item-profile img {
+	height: 150px;
+	border-radius: 300px;
+}
+.item-profile h2 {
+	font-size: 20px;
+	color: #000;
+}
+.item-profile p {
+	font-size: 13px;
+	color: #888;
+}
+
+.flex-container {
+   	text-align: center;
+   	margin: 15px 0;
+}
+.flex-item {
+	display: inline-block;
+    height: 100%;
+    margin: 5px;
+}

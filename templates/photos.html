@@ -1,0 +1,15 @@
+<ion-view view-title="Photos">
+    <ion-content>
+        <button class="button button-full button-assertive" ng-click="logout()">Logout</button>
+
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        
+        <div class="item item-divider">Your Photos</div>
+
+        <div class="flex-container">
+            <div class="flex-item" ng-repeat="data in photos">
+                <img ng-src="{{data.source}}" width="100"/>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

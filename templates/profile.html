@@ -1,0 +1,25 @@
+<ion-view view-title="Profile">
+    <ion-content>
+        <button class="button button-full button-assertive" ng-click="logout()">Logout</button>
+        
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        
+        <div class="list card text-center">
+            <div class="item item-profile">
+                <img ng-src="{{profileData.picture.data.url}}">
+                <h2>{{profileData.name}} ({{profileData.relationship_status}})</h2>
+                <p>{{profileData.id}}</p>
+                <p>{{profileData.location.name}}</p>
+
+                <!--<img ng-src="https://lukelinwood.files.wordpress.com/2016/12/programmer1.jpg">
+                <h2>Title</h2>
+                <p>Subtitle</p>
+                <p>This is your location</p>
+                <p>This is your relationship status</p>-->
+            </div>
+        </div>
+
+        <button menu-close class="button button-full button-positive" ui-sref="app.feed">My Feed</button>
+        <button menu-close class="button button-full button-balanced" ui-sref="app.photos">My Photos</button>
+    </ion-content>
+</ion-view>

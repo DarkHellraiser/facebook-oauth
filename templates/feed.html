@@ -1,0 +1,42 @@
+<ion-view view-title="Feed">
+    <ion-content>
+        <button class="button button-full button-assertive" ng-click="logout()">Logout</button>
+        
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        
+        <div class="item item-divider">Your Posts</div>
+
+        <div ng-repeat="data in feedData">
+            <div class="list card" ng-if="data.hasOwnProperty('message')">
+                <div class="item item-avatar">
+                    <img ng-src="{{feedData.myPicture}}">
+                    <h2>{{profileData.name}}</h2>
+                    <p>{{data.created_time | date : 'MMM d - hh:mm a'}}</p>
+                </div>
+                <div class="item item-body">
+                    <p>
+                        {{data.message}}
+                    </p>
+                    <p>
+                        <a class="subdued">{{data.likes.data.length}} Likes</a>
+                        <a class="subdued">{{data.comments.data.length}} Comments</a>
+                    </p>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item">
+                        <i class="icon ion-thumbsup"></i>
+                        Like
+                    </a>
+                    <a class="tab-item">
+                        <i class="icon ion-chatbox"></i>
+                        Comment
+                    </a>
+                    <a class="tab-item">
+                        <i class="icon ion-share"></i>
+                        Share
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
